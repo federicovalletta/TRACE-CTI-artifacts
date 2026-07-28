@@ -1,0 +1,19 @@
+% Primary outcome: set_scope (#distinct ATT&CK IDs per cell, mean over seeds)
+\begin{tabular}{lrrr}
+\toprule
+Retriever \ Generator & Llama & Mistral & Phi-3.5 \\
+\midrule
+E5 & 60.75 & 71.00 & 58.50 \\
+GTE-Qwen2 & 65.75 & 75.50 & 61.25 \\
+\bottomrule
+\end{tabular}
+
+% Reference outcome: doc-level F1 (cell mean over seeds)
+\begin{tabular}{lrrr}
+\toprule
+Retriever \ Generator & Llama & Mistral & Phi-3.5 \\
+\midrule
+E5 & 0.44 & 0.47 & 0.39 \\
+GTE-Qwen2 & 0.47 & 0.47 & 0.38 \\
+\bottomrule
+\end{tabular}

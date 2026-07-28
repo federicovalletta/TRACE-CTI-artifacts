@@ -1,0 +1,7 @@
+extraction_setup_id,retriever,generator,sampler,seed_range,import_batch_id,first_seen_version
+gteqwen_llama,GTE-Qwen2-7B (Ollama F16),Llama-3.1-8B-Instruct,"greedy (do_sample=False, T=0.0)","0,1 (renamed from canonical seed1,seed2)",ib_S1_gteqwen_llama,v1.0
+e5_mistral,E5-large-v2 (HF),Mistral-7B-Instruct-v0.3,"greedy (do_sample=False, T=0.0)","0,1,2",ib_S2_e5_mistral,v2.0
+gteqwen_mistral,GTE-Qwen2-7B (Ollama F16),Mistral-7B-Instruct-v0.3,"greedy (do_sample=False, T=0.0)","0,1,2",ib_S3_gteqwen_mistral,v3.0
+e5_llama,E5-large-v2 (HF),Llama-3.1-8B-Instruct,"greedy (do_sample=False, T=0.0)","0,1,2",ib_S0_e5_llama,v4.0
+e5_phi35,E5-large-v2 (HF),Phi-3.5-mini-instruct,"greedy (do_sample=False, T=0.0)","0,1,2",ib_S5_e5_phi35,v5.0
+gteqwen_phi35,GTE-Qwen2-7B (Ollama F16),Phi-3.5-mini-instruct,"greedy (do_sample=False, T=0.0)","0,1,2",ib_S4_gteqwen_phi35,v6.0

@@ -1,0 +1,21 @@
+{
+  "graph_version": "v6.0",
+  "n_seeds_per_setup": {
+    "gteqwen_llama": 3,
+    "e5_llama": 3,
+    "e5_mistral": 3,
+    "gteqwen_mistral": 3,
+    "e5_phi35": 3,
+    "gteqwen_phi35": 3
+  },
+  "design_notes": {
+    "gteqwen_llama": "v6 upgrade: S1 now has 3 genuine seeds (seed0/1/2) from table9_ollama_artifact_replica.py runs (20260527/20260528). The legacy final_table9_similarity files (only seed1/seed2, renamed) are superseded by the newer runs. Inter-seed sigma=0 confirmed.",
+    "gteqwen_phi35": "S4 newly executed in v6.0: closes the 2x3 factorial. 3 seeds (seed0/1/2) via table9_gteqwen_phi_replica.py (sharded). Inter-seed sigma=0 confirmed (deterministic greedy generation).",
+    "e5_phi35": "Standard 3-seed cell (seeds 0, 1, 2). Unchanged from v5."
+  },
+  "missing_cells": [],
+  "factorial_status": "CLOSED 2x3: E5/GTE-Qwen2 x Llama/Mistral/Phi-3.5. All 6 cells executed.",
+  "primary_outcome_bias_quad": "set_scope (#distinct ATT&CK IDs predicted per cell)",
+  "secondary_outcome_bias_quad": "between_family_disagreement_rate (mean Jaccard dist. against cross-generator cells with same retriever)",
+  "scope_note": "F1 is reported as a reference outcome only in factorial_2x3 (`grid_f1`); the bias decomposition deliberately avoids F1 to focus on KG-relevant outcomes."
+}

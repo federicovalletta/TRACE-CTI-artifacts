@@ -1,0 +1,72 @@
+{
+  "primary_set_scope": {
+    "outcome": "set_scope_mean",
+    "grid": {
+      "Llama": {
+        "E5": 60.75,
+        "GTE-Qwen2": 65.75
+      },
+      "Mistral": {
+        "E5": 71.0,
+        "GTE-Qwen2": 75.5
+      },
+      "Phi-3.5": {
+        "E5": 58.5,
+        "GTE-Qwen2": 61.25
+      }
+    },
+    "missing_cells": [],
+    "grand_mean_present_cells": 65.45833333333333,
+    "generator_means": {
+      "Llama": 63.25,
+      "Mistral": 73.25,
+      "Phi-3.5": 59.875
+    },
+    "retriever_means": {
+      "E5": 63.416666666666664,
+      "GTE-Qwen2": 67.5
+    },
+    "retriever_effect_pure_closed_subspace": 4.75,
+    "generator_pairwise_within_E5": {
+      "Mistral-Llama": 10.25,
+      "Phi3.5-Llama": -2.25,
+      "Phi3.5-Mistral": -12.5
+    },
+    "note": "v6.0: factorial is CLOSED (full 2\u00d73 grid). All main effects and interactions computable without missing-cell approximation. Pure retriever effect uses full 2\u00d73 balanced estimator."
+  },
+  "reference_f1": {
+    "outcome": "f1_mean",
+    "grid": {
+      "Llama": {
+        "E5": 0.44308651430883694,
+        "GTE-Qwen2": 0.4662071283672762
+      },
+      "Mistral": {
+        "E5": 0.4722393193193983,
+        "GTE-Qwen2": 0.469129970727533
+      },
+      "Phi-3.5": {
+        "E5": 0.3860692588992429,
+        "GTE-Qwen2": 0.38207205965145963
+      }
+    },
+    "missing_cells": [],
+    "grand_mean_present_cells": 0.4364673752122912,
+    "generator_means": {
+      "Llama": 0.45464682133805656,
+      "Mistral": 0.47068464502346563,
+      "Phi-3.5": 0.3840706592753512
+    },
+    "retriever_means": {
+      "E5": 0.43379836417582607,
+      "GTE-Qwen2": 0.4391363862487562
+    },
+    "retriever_effect_pure_closed_subspace": 0.010005632733286918,
+    "generator_pairwise_within_E5": {
+      "Mistral-Llama": 0.029152805010561333,
+      "Phi3.5-Llama": -0.05701725540959407,
+      "Phi3.5-Mistral": -0.0861700604201554
+    },
+    "note": "v6.0: factorial is CLOSED (full 2\u00d73 grid). All main effects and interactions computable without missing-cell approximation. Pure retriever effect uses full 2\u00d73 balanced estimator."
+  }
+}

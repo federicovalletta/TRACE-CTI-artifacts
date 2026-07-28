@@ -1,0 +1,63 @@
+# Table 9 method replication — RAG and RAG+FSP only
+# Paper: SoK: Automated TTP Extraction from CTI Reports
+
+paths:
+  llm_model: /home/azureuser/models/Llama-3.1-8B-Instruct
+  embedding_model: /home/azureuser/models/gte-Qwen2-7B-instruct
+  hf_cache: /home/azureuser/hf_cache
+  zenodo_root: /home/azureuser/ttp_sok
+  workspace: /home/azureuser/ttp_table9_method_replication
+  attack_kb_csv: /home/azureuser/ttp_sok/gLLM/database/rag_db.csv
+  tram2_test:  /home/azureuser/ttp_sok/datasets/MITRE TRAM2/test_split.json
+  tram2_train: /home/azureuser/ttp_sok/datasets/MITRE TRAM2/train_split.json
+  bosch_test: /home/azureuser/ttp_sok/datasets/Bosch AnnoCTR/bosch_cti_test_ds.json
+  bosch_train: /home/azureuser/ttp_sok/datasets/Bosch AnnoCTR/bosch_cti_devtrain_ds.json
+  embed_cache_dir: /home/azureuser/ttp_table9_method_replication/outputs/cache
+
+retrieval:
+  top_k_initial: 100   # Zenodo: retrieve top-100 from full KB
+  top_k_final: 5       # filtered to label set, take top-5 strict (no off-by-one)
+  metric: cosine       # L2-normalized → cosine == ranking equivalent of Euclidean
+  off_by_one_bug: false  # set true to replicate Zenodo bug6 (6 entries)
+
+few_shot:
+  mode: hardcoded      # hardcoded | random_train  (primary run = hardcoded)
+  n_examples: 5
+
+decoding:
+  max_new_tokens: 512
+  do_sample: false
+  temperature: 0.0
+  top_p: 1.0
+  repetition_penalty: 1.2
+  precision: fp16
+
+experiment:
+  seeds: [0, 1, 2]
+  sentence_level_inference: true
+  document_level_evaluation: true
+  empty_case_metric: 1.0  # both pred and gt empty -> 1.0/1.0/1.0/1.0 (Zenodo policy)
+
+datasets:
+  TRAM2:
+    label_set_name: TRAM_CLASSES
+    sentences_field: cti_report   # already pre-split list
+    label_field: label            # list of lists per sentence
+    is_pre_split: true
+  AnnoCTR:
+    label_set_name: BOSCH_TECHNIQUES_LABELS
+    sentences_field: cti_report   # single string, period-split
+    label_field: mitre_ids        # flat doc-level list
+    is_pre_split: false
+
+target_methods:
+  - RAG
+  - RAG+FSP
+
+expected_results:
+  TRAM2:
+    RAG:     {f1: 54.1, precision: 45.5, recall: 66.8}
+    RAG+FSP: {f1: 53.2, precision: 48.5, recall: 65.5}
+  AnnoCTR:
+    RAG:     {f1: 35.9, precision: 32.7, recall: 53.1}
+    RAG+FSP: {f1: 34.6, precision: 33.3, recall: 39.3}

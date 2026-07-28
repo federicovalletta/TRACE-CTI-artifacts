@@ -1,0 +1,222 @@
+{
+  "build_timestamp_utc": "2026-05-28T11:11:38.116048+00:00",
+  "consensus_unit": "(dataset, method, sentence_id, attack_id)",
+  "prediction_field": "ids_regex_filtered_after_output_filter",
+  "datasets": {
+    "TRAM2": {
+      "n_reports": 31,
+      "n_sentences": 3820
+    },
+    "AnnoCTR": {
+      "n_reports": 34,
+      "n_sentences": 1483
+    }
+  },
+  "gold": {
+    "n_doc_level_assertions": 824,
+    "n_distinct_attack_ids_gold": 172,
+    "per_dataset": {
+      "AnnoCTR": 145,
+      "TRAM2": 48
+    }
+  },
+  "csv_files_written": [
+    {
+      "name": "nodes_extraction_setup.csv",
+      "rows": 6
+    },
+    {
+      "name": "nodes_import_batch.csv",
+      "rows": 6
+    },
+    {
+      "name": "nodes_graph_version.csv",
+      "rows": 6
+    },
+    {
+      "name": "edges_version_includes.csv",
+      "rows": 21
+    },
+    {
+      "name": "nodes_llm_run.csv",
+      "rows": 72
+    },
+    {
+      "name": "nodes_report.csv",
+      "rows": 65
+    },
+    {
+      "name": "nodes_sentence.csv",
+      "rows": 5303
+    },
+    {
+      "name": "nodes_attack_id.csv",
+      "rows": 203
+    },
+    {
+      "name": "nodes_prediction.csv",
+      "rows": 82260
+    },
+    {
+      "name": "nodes_graph_assertion.csv",
+      "rows": 27420
+    },
+    {
+      "name": "nodes_retrieved_context.csv",
+      "rows": 140630
+    },
+    {
+      "name": "nodes_consensus_assertion.csv",
+      "rows": 5410
+    },
+    {
+      "name": "edges_supports.csv",
+      "rows": 15120
+    },
+    {
+      "name": "edges_agrees_with.csv",
+      "rows": 16991
+    },
+    {
+      "name": "edges_disagrees_with.csv",
+      "rows": 68231
+    },
+    {
+      "name": "edges_predicted_by.csv",
+      "rows": 82260
+    },
+    {
+      "name": "edges_evidenced_by.csv",
+      "rows": 82260
+    },
+    {
+      "name": "edges_about.csv",
+      "rows": 82260
+    },
+    {
+      "name": "edges_assertion_evidence.csv",
+      "rows": 27420
+    },
+    {
+      "name": "edges_assertion_about.csv",
+      "rows": 27420
+    },
+    {
+      "name": "edges_assertion_setup.csv",
+      "rows": 27420
+    },
+    {
+      "name": "edges_retrieved_about.csv",
+      "rows": 140630
+    },
+    {
+      "name": "edges_retrieved_for_sent.csv",
+      "rows": 140630
+    }
+  ],
+  "versions": {
+    "v1.0": {
+      "n_extraction_setups": 1,
+      "n_llm_runs": 12,
+      "n_prediction": 15747,
+      "n_graph_assertion": 5249,
+      "n_retrieved_context": 39378,
+      "n_distinct_attack_ids_observed": 120,
+      "n_consensus_assertions_in_version": 0,
+      "scope_counts": {
+        "gold_backed": 2850,
+        "prediction_only": 2399
+      },
+      "trusted_view_size": 2850,
+      "trusted_view_predictions_leak": 0
+    },
+    "v2.0": {
+      "n_extraction_setups": 2,
+      "n_llm_runs": 24,
+      "n_prediction": 35790,
+      "n_graph_assertion": 11930,
+      "n_retrieved_context": 89706,
+      "n_distinct_attack_ids_observed": 133,
+      "n_consensus_assertions_in_version": 1539,
+      "scope_counts": {
+        "gold_backed": 6754,
+        "prediction_only": 4544,
+        "strong_consensus": 632
+      },
+      "trusted_view_size": 7386,
+      "trusted_view_predictions_leak": 0
+    },
+    "v3.0": {
+      "n_extraction_setups": 3,
+      "n_llm_runs": 36,
+      "n_prediction": 57195,
+      "n_graph_assertion": 19065,
+      "n_retrieved_context": 89706,
+      "n_distinct_attack_ids_observed": 137,
+      "n_consensus_assertions_in_version": 3952,
+      "scope_counts": {
+        "gold_backed": 10983,
+        "prediction_only": 5488,
+        "consensus_validated": 1862,
+        "strong_consensus": 732
+      },
+      "trusted_view_size": 13577,
+      "trusted_view_predictions_leak": 0
+    },
+    "v4.0": {
+      "n_extraction_setups": 4,
+      "n_llm_runs": 48,
+      "n_prediction": 71883,
+      "n_graph_assertion": 23961,
+      "n_retrieved_context": 89706,
+      "n_distinct_attack_ids_observed": 137,
+      "n_consensus_assertions_in_version": 4810,
+      "scope_counts": {
+        "gold_backed": 13559,
+        "prediction_only": 6664,
+        "consensus_validated": 3146,
+        "strong_consensus": 592
+      },
+      "trusted_view_size": 17297,
+      "trusted_view_predictions_leak": 0
+    },
+    "v5.0": {
+      "n_extraction_setups": 5,
+      "n_llm_runs": 60,
+      "n_prediction": 76875,
+      "n_graph_assertion": 25625,
+      "n_retrieved_context": 89706,
+      "n_distinct_attack_ids_observed": 138,
+      "n_consensus_assertions_in_version": 5088,
+      "scope_counts": {
+        "gold_backed": 14517,
+        "prediction_only": 6962,
+        "consensus_validated": 3976,
+        "strong_consensus": 170
+      },
+      "trusted_view_size": 18663,
+      "trusted_view_predictions_leak": 0
+    },
+    "v6.0": {
+      "n_extraction_setups": 6,
+      "n_llm_runs": 72,
+      "n_prediction": 82260,
+      "n_graph_assertion": 27420,
+      "n_retrieved_context": 89706,
+      "n_distinct_attack_ids_observed": 139,
+      "n_consensus_assertions_in_version": 5410,
+      "scope_counts": {
+        "gold_backed": 15561,
+        "prediction_only": 7211,
+        "consensus_validated": 4522,
+        "strong_consensus": 126
+      },
+      "trusted_view_size": 20209,
+      "trusted_view_predictions_leak": 0
+    }
+  },
+  "trust_policy_violations": {
+    "predictions_in_trusted_view": 0,
+    "explanation": "Raw Prediction nodes are NEVER placed in the trusted view by construction; only GraphAssertion nodes with trust_scope in {gold_backed, consensus_validated, strong_consensus} are. Verified by schema."
+  }
+}

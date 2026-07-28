@@ -1,0 +1,23 @@
+version: "3.9"
+# Minimal docker-compose for a local Neo4j 5 instance.
+# The CSVs in data/neo4j_import/ are bind-mounted into the container's import dir.
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: kg_cti_neo4j
+    environment:
+      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD:-pleaseChangeMe}
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./../data/neo4j_import:/import:ro
+      - kg_neo4j_data:/data
+      - kg_neo4j_logs:/logs
+volumes:
+  kg_neo4j_data:
+  kg_neo4j_logs:
