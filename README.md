@@ -7,6 +7,7 @@ TTP Claims with Knowledge Graphs**, under submission at *Computers & Security*.
 - **Download:** [Release v6.0](https://github.com/federicovalletta/TRACE-CTI-artifacts/releases/tag/v6.0) provides `TRACE-CTI_artifacts_v6_20260728.tar.gz` (7.2 MB).
 - **SHA-256:** `E76E3AD2DCB658D43BDCEC406B75E1BC456BDB25639ADA49CEE0C144AB71C3BC`
 - **License:** MIT for the original code and scripts (see [LICENSE](LICENSE)); third-party data keep their own terms, listed in the artifact README.
+- **STIX 2.1 PoC:** [release v1.0.0](https://github.com/federicovalletta/TRACE-CTI-artifacts/releases/tag/stix-poc-v1.0.0) provides the one-claim exporter, versioned extension schema, fixtures, STIX bundles, and MISP-STIX converter check under [`stix_poc/`](stix_poc/). This is an offline conversion test, not a live MISP deployment.
 
 ## Quick start
 

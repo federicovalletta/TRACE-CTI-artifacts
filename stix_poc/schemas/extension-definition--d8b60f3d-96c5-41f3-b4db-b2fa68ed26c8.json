@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRACE-CTI GraphAssertion property extension",
+  "type": "object",
+  "properties": {
+    "extensions": {
+      "type": "object",
+      "properties": {
+        "extension-definition--d8b60f3d-96c5-41f3-b4db-b2fa68ed26c8": {
+          "type": "object",
+          "properties": {
+            "extension_type": {
+              "const": "property-extension"
+            },
+            "graph_assertion_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "operational_scope": {
+              "enum": [
+                "gold_backed",
+                "consensus_validated",
+                "strong_consensus",
+                "prediction_only"
+              ]
+            },
+            "graph_version": {
+              "type": "string",
+              "pattern": "^v[0-9]+\\.[0-9]+$"
+            },
+            "source_dataset": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_report_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence_sentence_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "attack_id": {
+              "type": "string",
+              "pattern": "^T[0-9]{4}(\\.[0-9]{3})?$"
+            },
+            "method": {
+              "type": "string",
+              "minLength": 1
+            },
+            "validation_basis": {
+              "enum": [
+                "dataset-gold",
+                "multi-setup",
+                "none"
+              ]
+            }
+          },
+          "required": [
+            "extension_type",
+            "graph_assertion_id",
+            "operational_scope",
+            "graph_version",
+            "source_dataset",
+            "source_report_id",
+            "evidence_sentence_id",
+            "attack_id",
+            "method",
+            "validation_basis"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

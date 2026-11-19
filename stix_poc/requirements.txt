@@ -1,0 +1,2 @@
+stix2==3.0.2
+stix2-validator==3.3.2
