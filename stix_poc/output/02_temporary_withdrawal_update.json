@@ -1,0 +1,163 @@
+{
+    "type": "bundle",
+    "id": "bundle--433067db-3f2f-4b80-a77a-45bcaa2bd381",
+    "objects": [
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--fa2ec008-d100-49a8-8c25-5fcee88649c2",
+            "created": "2026-11-19T00:00:00.000Z",
+            "modified": "2026-11-19T00:00:00.000Z",
+            "name": "TRACE-CTI STIX 2.1 proof of concept",
+            "identity_class": "organization"
+        },
+        {
+            "type": "extension-definition",
+            "spec_version": "2.1",
+            "id": "extension-definition--d8b60f3d-96c5-41f3-b4db-b2fa68ed26c8",
+            "created_by_ref": "identity--fa2ec008-d100-49a8-8c25-5fcee88649c2",
+            "created": "2026-11-19T00:00:00.000Z",
+            "modified": "2026-11-19T00:00:00.000Z",
+            "name": "TRACE-CTI GraphAssertion metadata",
+            "description": "Published proof-of-concept property extension carrying TRACE-CTI claim identity, evidence location, graph version, and trust scope.",
+            "schema": "https://raw.githubusercontent.com/federicovalletta/TRACE-CTI-artifacts/stix-poc-v1.0.0/stix_poc/schemas/extension-definition--d8b60f3d-96c5-41f3-b4db-b2fa68ed26c8.json",
+            "version": "1.0.0",
+            "extension_types": [
+                "property-extension"
+            ]
+        },
+        {
+            "type": "identity",
+            "spec_version": "2.1",
+            "id": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+            "created": "2017-06-01T00:00:00.000Z",
+            "modified": "2026-05-12T16:33:30.227Z",
+            "name": "The MITRE Corporation",
+            "identity_class": "organization",
+            "object_marking_refs": [
+                "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+            ],
+            "x_mitre_attack_spec_version": "3.2.0"
+        },
+        {
+            "type": "marking-definition",
+            "spec_version": "2.1",
+            "id": "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168",
+            "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+            "created": "2017-06-01T00:00:00.000Z",
+            "definition_type": "statement",
+            "definition": {
+                "statement": "Copyright 2015-2026, The MITRE Corporation. MITRE ATT&CK and ATT&CK are registered trademarks of The MITRE Corporation."
+            }
+        },
+        {
+            "type": "attack-pattern",
+            "spec_version": "2.1",
+            "id": "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+            "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+            "created": "2020-03-11T21:01:00.959Z",
+            "modified": "2026-05-12T15:12:00.713Z",
+            "name": "Lateral Tool Transfer",
+            "description": "Adversaries may transfer tools or other files between systems in a compromised environment. Once brought into the victim environment (i.e., [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105)) files may then be copied from one system to another to stage adversary tools or other files over the course of an operation.\n\nAdversaries may copy files between internal victim systems to support lateral movement using inherent file sharing protocols such as file sharing over [SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002) to connected network shares or with authenticated connections via [Remote Desktop Protocol](https://attack.mitre.org/techniques/T1021/001).(Citation: Unit42 LockerGoga 2019)\n\nFiles can also be transferred using native or otherwise present tools on the victim system, such as scp, rsync, curl, sftp, and [ftp](https://attack.mitre.org/software/S0095). In some cases, adversaries may be able to leverage [Web Service](https://attack.mitre.org/techniques/T1102)s such as Dropbox or OneDrive to copy files from one machine to another via shared, automatically synced folders.(Citation: Dropbox Malware Sync)",
+            "kill_chain_phases": [
+                {
+                    "kill_chain_name": "mitre-attack",
+                    "phase_name": "lateral-movement"
+                }
+            ],
+            "object_marking_refs": [
+                "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+            ],
+            "external_references": [
+                {
+                    "source_name": "mitre-attack",
+                    "url": "https://attack.mitre.org/techniques/T1570",
+                    "external_id": "T1570"
+                },
+                {
+                    "source_name": "Dropbox Malware Sync",
+                    "description": "David Talbot. (2013, August 21). Dropbox and Similar Services Can Sync Malware. Retrieved May 31, 2023.",
+                    "url": "https://www.technologyreview.com/2013/08/21/83143/dropbox-and-similar-services-can-sync-malware/"
+                },
+                {
+                    "source_name": "Unit42 LockerGoga 2019",
+                    "description": "Harbison, M. (2019, March 26). Born This Way? Origins of LockerGoga. Retrieved April 16, 2019.",
+                    "url": "https://unit42.paloaltonetworks.com/born-this-way-origins-of-lockergoga/"
+                }
+            ],
+            "x_mitre_attack_spec_version": "3.3.0",
+            "x_mitre_contributors": [
+                "Shailesh Tiwary (Indian Army)"
+            ],
+            "x_mitre_deprecated": false,
+            "x_mitre_domains": [
+                "enterprise-attack"
+            ],
+            "x_mitre_is_subtechnique": false,
+            "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+            "x_mitre_platforms": [
+                "ESXi",
+                "Linux",
+                "macOS",
+                "Windows"
+            ],
+            "x_mitre_version": "1.4"
+        },
+        {
+            "type": "note",
+            "spec_version": "2.1",
+            "id": "note--038e837e-2dde-4715-a248-69cbe851a933",
+            "created_by_ref": "identity--fa2ec008-d100-49a8-8c25-5fcee88649c2",
+            "created": "2026-11-19T00:00:00.000Z",
+            "modified": "2026-11-19T01:00:00.000Z",
+            "abstract": "TRACE-CTI claim T1570 (prediction_only)",
+            "content": "GraphAssertion gteqwen_llama::TRAM2::RAG::tram2_5__s17::T1570 maps evidence sentence tram2_5__s17 in report tram2_5 to ATT&CK T1570; current operational scope: prediction_only.\n\nTRACE-CTI metadata (JSON):\n{\"attack_id\": \"T1570\", \"evidence_sentence_id\": \"tram2_5__s17\", \"graph_assertion_id\": \"gteqwen_llama::TRAM2::RAG::tram2_5__s17::T1570\", \"graph_version\": \"v6.0\", \"lifecycle_state\": \"temporary-withdrawal\", \"method\": \"RAG\", \"operational_scope\": \"prediction_only\", \"revoked\": false, \"source_dataset\": \"TRAM2\", \"source_report_id\": \"tram2_5\", \"validation_basis\": \"none\"}",
+            "object_refs": [
+                "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+                "report--4fd009d8-1b0b-43d6-a642-ccda1334f22d"
+            ],
+            "external_references": [
+                {
+                    "source_name": "TRACE-CTI v6.0",
+                    "external_id": "gteqwen_llama::TRAM2::RAG::tram2_5__s17::T1570"
+                },
+                {
+                    "source_name": "TRAM v2",
+                    "external_id": "tram2_5#tram2_5__s17"
+                }
+            ],
+            "extensions": {
+                "extension-definition--d8b60f3d-96c5-41f3-b4db-b2fa68ed26c8": {
+                    "extension_type": "property-extension",
+                    "graph_assertion_id": "gteqwen_llama::TRAM2::RAG::tram2_5__s17::T1570",
+                    "operational_scope": "prediction_only",
+                    "graph_version": "v6.0",
+                    "source_dataset": "TRAM2",
+                    "source_report_id": "tram2_5",
+                    "evidence_sentence_id": "tram2_5__s17",
+                    "attack_id": "T1570",
+                    "method": "RAG",
+                    "validation_basis": "none"
+                }
+            }
+        },
+        {
+            "type": "report",
+            "spec_version": "2.1",
+            "id": "report--4fd009d8-1b0b-43d6-a642-ccda1334f22d",
+            "created_by_ref": "identity--fa2ec008-d100-49a8-8c25-5fcee88649c2",
+            "created": "2026-11-19T00:00:00.000Z",
+            "modified": "2026-11-19T00:00:00.000Z",
+            "name": "TRACE-CTI selected-claim export: tram2_5",
+            "description": "A versioned offline interoperability demonstration for one claim; this is not a re-publication of the source CTI report.",
+            "report_types": [
+                "threat-report"
+            ],
+            "published": "2026-11-19T00:00:00Z",
+            "object_refs": [
+                "note--038e837e-2dde-4715-a248-69cbe851a933",
+                "attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5"
+            ]
+        }
+    ]
+}

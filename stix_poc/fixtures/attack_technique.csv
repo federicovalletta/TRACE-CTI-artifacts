@@ -1,0 +1,2 @@
+attack_id,name,is_subtechnique,kill_chain_phases,platforms,data_sources,stix_id,ontology_completeness
+T1570,Lateral Tool Transfer,false,lateral-movement,ESXi|Linux|macOS|Windows,,attack-pattern--bf90d72c-c00b-45e3-b3aa-68560560d4c5,stix_bundle_loaded

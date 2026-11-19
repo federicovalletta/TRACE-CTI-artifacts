@@ -1,0 +1,2 @@
+graph_assertion_id,setup_id,dataset,method,sentence_id,doc_id,sent_idx,attack_id,support_seeds,first_seen_version,scope_v1,scope_v2,scope_v3,scope_v4,scope_v5,scope_v6,trust_scope
+gteqwen_llama::TRAM2::RAG::tram2_5__s17::T1570,gteqwen_llama,TRAM2,RAG,tram2_5__s17,tram2_5,17,T1570,"0,1,2",v1.0,gold_backed,gold_backed,gold_backed,gold_backed,gold_backed,gold_backed,gold_backed
